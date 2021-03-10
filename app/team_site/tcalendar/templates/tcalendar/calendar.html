@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block container_class %}
+    calendar
+{% endblock %}
+
+{% block calendar-current %}
+    onclick="return false"
+{% endblock %}
+
+{% block main %}
+    <div class="calendar-table-scroll">
+        <table class="calendar-table">
+            <tbody class="calendar-table-body">
+
+                {% for match in matches %}
+
+                    <tr>
+                        <td>
+                            <div class="tour">{{ match.stage }}</div>
+                            <div class="date">{{ match.date|date:"d.m.Y" }}</div>
+                            <div class="match">
+                                <span class="team1">{{ match.team1 }}</span>
+                                <span class="result"><b>{{ match.result }}</b></span>
+                                <span class="team2">{{ match.team2 }}</span>
+                            </div>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+            </tbody>
+        </table> <!-- Calendar table end -->
+    </div>
+{% endblock %}

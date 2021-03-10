@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title-current %}
+    onclick="return false"
+{% endblock %}
+
+{% block main %}
+    <img class="team-photo" src="{% static 'images/team_photos/team_photo.jpg' %}"  alt="Общее фото команды">
+    <h2 class="best-players-title">Лучшие игроки команды</h2>
+    <div class="best-players">
+
+        {% for player in players %}
+            <div class="player-card {{ player.rank }}">
+                <img class="photo" src="{{ player.photo.url }}" alt="Фото игрока">
+                <span class="pos">{{ player.position }}</span>
+                <span class="num">{{ player.number }}</span>
+                <p class="name">{{ player.name }}</p>
+                <span class="plus-minus">{{ player.points }}</span>
+                <ul class="stats">
+                    <li>И: {{ player.games }}</li>
+                    <li>Г: {{ player.goals }}</li>
+                    <li>ГП: {{ player.passes }}</li>
+                </ul>
+            </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="game">
+        <div class="one"></div>
+        <div class="four"></div>
+        <div class="thirteen"></div>
+        <div class="sixteen"></div>
+        <img id="ball" class="ten" src="http://pngimg.com/uploads/football/football_PNG1086.png" alt="Мяч">
+    </div>
+
+{% endblock %}

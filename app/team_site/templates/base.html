@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>ФК Меркурио</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container {% block container_class %}{% endblock %}">
+
+        <header class="header">
+            <a class="title-btn" href="/" {% block title-current %}{% endblock %}>
+                <h1>ФК Меркурио</h1>
+            </a>
+            <nav class="nav">
+                <a class="btn" href="/roster/" {% block roster-current %}{% endblock %}>Состав</a>
+                <a class="btn" href="/calendar/" {% block calendar-current %}{% endblock %}>Календарь</a>
+                <a class="btn" href="/table/" {% block table-current %}{% endblock %}>Таблица</a>
+            </nav>
+        </header>
+
+        <main class="main">
+            {% block main %}
+            {% endblock %}
+        </main>
+
+    </div>
+
+    <script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>

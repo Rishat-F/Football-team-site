@@ -1,0 +1,2801 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 15px;
+}
+
+body {
+    margin: 0px;
+    background-color: #16110e;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0px;
+}
+
+                    /* Container */
+.container {
+    max-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.roster {
+    background: url("../images/background/раздевалка1.jpg") no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.calendar {
+    background: url("../images/background/стадион1.jpg") no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.table {
+    background: url("../images/background/раздевалка2.jpg") no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+
+                    /* Header */
+.header {
+    width: 100%;
+    height: 17vh;
+    margin: 0 auto;
+    color: #fff;
+    padding: 15px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: #16110e;
+}
+
+.title-btn {
+    color: white;
+    text-align: center;
+    padding: 0px 45px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.1s linear;
+}
+
+.title-btn:after {
+    content: "";
+    width: 3px;
+    height: 70%;
+    position: absolute;
+    background-color: #fff;
+    top: calc(50% - 35%);
+    right: 0px;
+    transition: background-color 0.1s linear;
+}
+
+.title-btn:hover {
+    color: #ff8100;
+}
+
+.title-btn:hover:after {
+    background-color: #ff8100;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 25%;
+    text-decoration: none;
+    background-color: #e61111;
+    color: #fff;
+    padding: 1rem 0px;
+    transition: background 0.1s linear,
+    color 0.1s linear;
+    border-radius: 1rem;
+    border: 3px solid #fff;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+    border: 3px solid #f00;
+}
+
+.btn[onclick='return false'] {
+    background-color: #fff;
+    color: #000;
+    border: 3px solid #f00;
+    position: relative;
+    top: -5px;
+}
+
+
+                    /* Main */
+
+    /* Index */
+
+/* Team photo */
+.team-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Team best players */
+.best-players-title {
+    font-weight: 500;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.best-players {
+    width: 70%;
+    margin: 0 auto;
+    padding: 60px 0px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "first first"
+        "second third";
+    justify-items: center;
+    grid-row-gap: 70px;
+}
+
+.first {
+    grid-area: first;
+    width: 50%;
+}
+
+.second {
+    grid-area: second;
+    width: 100%;
+    position: relative;
+    right: 35px;
+}
+
+.third {
+    grid-area: third;
+    width: 100%;
+    position: relative;
+    left: 35px;
+}
+
+.player-card {
+    background: linear-gradient(90deg, #16110e, #c7c4c1);
+    color: black;
+    display: grid;
+    grid-template-columns: 150px 50px 2fr 2fr;
+    grid-template-rows: 75px 75px 40px;
+    align-items: center;
+    transform: skewX(-15deg);
+}
+
+.photo {
+    grid-area: 1/1/3/2;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 50%;
+    transform: skewX(+15deg);
+}
+
+.name {
+    grid-area: 3/1/4/4;
+    font-size: 30px;
+    color: #fff;
+    transform: skewX(+15deg);
+}
+
+.pos {
+    grid-area: 1/2/2/3;
+    font-size: 26px;
+    color: #fff;
+    transform: skewX(+15deg);
+    align-self: start;
+    position: relative;
+    top: 15px;
+    right: 13px;
+}
+
+.num {
+    grid-area: 2/2/3/3;
+    font-size: 30px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    padding-top: 10px;
+    border-radius: 50%;
+    transform: skewX(+15deg);
+    align-self: end;
+    position: relative;
+    bottom: 10px;
+    right: 5px;
+}
+
+.plus-minus {
+    grid-area: 1/4/4/5;
+    font-size: 120px;
+    text-align: center;
+}
+
+.stats {
+    padding: 0px;
+    grid-area: 1/3/3/4;
+    padding-top: 15px;
+    padding-left: 25px;
+    list-style-type: none;
+    line-height: 1.5;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.game {
+    width: 50vh;
+    height: 50vh;
+    margin: 50px auto;
+    background: #ffecae;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 5px;
+    grid-template-areas:
+        "one two three four"
+        "five six seven eight"
+        "nine ten eleven twelve"
+        "thirteen fourteen fifteen sixteen";
+}
+
+#ball {
+    width: 50%;
+    height: 50%;
+}
+
+.one {
+    grid-area: one;
+    background-color: #ffecae;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.one::before {
+    content: "";
+    width: 10px;
+    height: 100%;
+    background-color: #0f0;
+    position: absolute;
+    right: -5px;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+    background-color: #ffecae;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.four::before {
+    content: "";
+    width: 10px;
+    height: 100%;
+    background-color: #0f0;
+    position: absolute;
+    left: -5px;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.ten {
+    grid-area: ten;
+}
+
+.eleven {
+    grid-area: eleven;
+}
+
+.twelve {
+    grid-area: twelve;
+}
+
+.thirteen {
+    grid-area: thirteen;
+    background-color: #ffecae;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.thirteen::before {
+    content: "";
+    width: 10px;
+    height: 100%;
+    background-color: #0f0;
+    position: absolute;
+    right: -5px;
+}
+
+.fourteen {
+    grid-area: fourteen;
+}
+
+.fifteen {
+    grid-area: fifteen;
+}
+
+.sixteen {
+    grid-area: sixteen;
+    background-color: #ffecae;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.sixteen::before {
+    content: "";
+    width: 10px;
+    height: 100%;
+    background-color: #0f0;
+    position: absolute;
+    left: -5px;
+}
+
+
+/*
+
+The second variation of best players section
+
+.best-players-title {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.best-players {
+    width: 40%;
+    margin: 0px auto;
+    padding: 40px 0px;
+}
+
+.player-card {
+    background: linear-gradient(90deg, #16110e, #c7c4c1);
+    color: black;
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr;
+    grid-template-rows: 150px 40px;
+    align-items: center;
+    margin-bottom: 40px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.photo {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+.name {
+    grid-area: 2/1/3/3;
+    font-size: 30px;
+    color: #fff;
+}
+
+.plus-minus {
+    grid-area: 1/3/3/4;
+    text-align: center;
+    font-size: 120px;
+}
+
+.stats {
+    grid-area: 1/2/2/3;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+}
+*/
+
+
+/* Roster table */
+.roster-scroll {
+    width: 55%;
+    max-height: 77vh;
+    margin: 3vh auto;
+    margin-right: 6vw;
+    overflow: hidden scroll;
+    border-bottom: 4px solid #d96e50;
+    border-left: 3px solid #d96e50;
+    border-right: 1px solid #d96e50;
+    background-color: #d96e50;
+}
+
+.roster-scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+.roster-scroll::-webkit-scrollbar-track {
+    background-color: #d96e50;
+}
+
+.roster-scroll::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 5px;
+    border: 3px solid #d96e50;
+}
+
+.roster-table {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    margin: 0px auto;
+    background-color: #fff;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.roster-table__scroll {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    margin: 0px;
+    background-color: #fff;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.roster-table-head {
+    font-size: 20px;
+    color: #fff;
+    background-color: #d96e50;
+}
+
+.roster-table-head th {
+    padding: 15px 0px;
+    position: sticky;
+    top: 0px;
+    background-color: #d96e50;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.roster-table .th-sort-asc::before {
+    content: "\25be";
+    margin-right: 1px;
+}
+
+.roster-table .th-sort-desc::before {
+    content: "\25b4";
+    margin-right: 1px;
+}
+
+.roster-table-body .player {
+    font-size: 22px;
+    margin: 0px;
+    border-bottom: 1px solid #e1e5e8;
+}
+
+.player-info {
+    background-color: #c9e9f7;
+    display: flex;
+    font-size: 20px;
+    justify-content: space-evenly;
+    padding: 5px 0px 20px 0px;
+    border-bottom: 1px solid #e1e5e8;
+}
+
+.player-info-row {
+    display: none;
+}
+
+.show-info + tr {
+    display: table-row;
+}
+
+.player.show-info {
+    background-color: #c9e9f7;
+    border-bottom: 0px;
+}
+
+.roster-table-body tr:last-child {
+    border-bottom: 0px;
+}
+
+.roster-table-body .player:hover {
+    cursor: pointer;
+}
+
+.photo-column {
+    width: 11%;
+    padding: 5px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.gk:before {
+    font-size: 17px;
+    content: "GK";
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    right: -3px;
+    top: 7px;
+    color: #3a3737;
+}
+
+.number {
+    font-size: 18px;
+    background-color: #3a3737;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    right: -5px;
+    bottom: 7px;
+    padding: 6px;
+}
+
+.number span {
+    position: relative;
+    top: 1px;
+}
+
+.matches-column,
+.goals-column,
+.passes-column,
+.points-column,
+.pm-column {
+    width: 9%;
+}
+
+.player-photo {
+    display: block;
+    border-radius: 50%;
+    width: 90%;
+    height: auto;
+    margin: 0px;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.name-column {
+    text-align: left;
+}
+
+.name-column:before {
+    display: inline-block;
+    position: relative;
+    padding: 3px 10px 5px 10px;
+    content: "\2335";
+    color: #c3c3c3;
+    margin-right: 10px;
+    margin-left: 15px;
+    border: 2px solid #c3c3c3;
+    border-radius: 50%;
+}
+
+.show-info
+.name-column:before {
+    transform: rotate(180deg);
+}
+
+/* Calendar table scroll */
+.calendar-table-scroll {
+    width: 40%;
+    max-height: 70vh;
+    border: 4px solid #0a0505;
+    border-right: 0px;
+    margin: 30px auto;
+    overflow: hidden scroll;
+}
+
+.calendar-table-scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+.calendar-table-scroll::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+.calendar-table-scroll::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 5px;
+    border: 3px solid #000;
+}
+
+/* Calendar table */
+.calendar-table {
+    font-size: 20px;
+    text-align: center;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    background-color: white;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.calendar-table td {
+    padding: 0px;
+}
+
+.tour {
+    color: #fff;
+    font-weight: 700;
+    background-color: #821616;
+    border-bottom: 2px solid black;
+    padding: 5px 0px;
+}
+
+.date {
+    padding: 10px 0px;
+    font-size: 22px;
+}
+
+.match {
+    padding-bottom: 25px;
+    font-size: 22px;
+}
+
+.result {
+    padding: 0px 10px;
+}
+
+/* Tournament table */
+.tournament-table {
+    font-family: 'Roboto', sans-serif;
+    width: 55%;
+    text-align: center;
+    margin: 20px auto;
+    margin-bottom: 0px;
+    background-color: #fff;
+    border-collapse: collapse;
+    border: 3px solid #d0585b;
+    border-top: 0px;
+}
+
+.tournament-table-head {
+    background-color: #d0585b;
+    font-size: 20px;
+    color: #fff;
+}
+
+.tournament-table-head th {
+    padding: 15px 0px;
+}
+
+.tournament-table-body tr{
+    font-size: 22px;
+    margin: 0px;
+    border-bottom: 1px solid #e1e5e8;
+}
+
+.tournament-table-body tr:last-child {
+    border-bottom: 0px;
+}
+
+.our-team {
+    background-color: #deaa9c;
+}
+
+.position-column,
+.matches-column,
+.games-column,
+.wins-column,
+.draws-column,
+.loses-column,
+.gdiff-column,
+.team_points-column {
+    width: 10%;
+}
+
+.team-column {
+    text-align: left;
+    padding: 5px 0px 5px 15px;
+}
+
+
+                    /* Media */
+
+@media (max-width: 1400px) and (orientation: landscape) {
+
+    .header {
+        font-size: 15px;
+        height: 17vh;
+    }
+
+
+    .best-players {
+        width: 80%;
+    }
+
+
+    .roster-scroll {
+        width: 60%;
+    }
+
+    .gk:before {
+        font-size: 18px;
+        right: -15px;
+        top: 7px;
+    }
+
+    .number {
+        font-size: 17px;
+        width: 36px;
+        height: 36px;
+        right: -14px;
+        bottom: 6px;
+        padding: 4px;
+    }
+
+    .number span {
+        top: 4px;
+        right: 0px;
+    }
+
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        width: 8%;
+        font-size: 22px;
+    }
+
+    .player-photo {
+        min-width: 75px;
+        min-height: 75px;
+    }
+
+    .name-column {
+        font-size: 22px;
+    }
+
+    .name-column:before {
+        padding: 2px 8px 4px 8px;
+        margin-right: 15px;
+        margin-left: 25px;
+    }
+
+    .player-info {
+        font-size: 22px;
+        padding: 5px 0px 18px 0px;
+    }
+
+
+    .calendar-table-scroll {
+        width: 50%;
+        max-height: 73vh;
+        margin: 5vh auto;
+    }
+
+    .tour {
+        font-size: 24px;
+    }
+
+    .date {
+        font-size: 24px;
+    }
+
+    .match {
+        font-size: 24px;
+    }
+
+
+    .tournament-table-scroll {
+        width: 60%;
+        max-height: 73vh;
+        border-bottom: 3px solid #d0585b;
+        overflow: hidden scroll;
+        margin: 6vh auto;
+        background: #d0585b;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-track {
+        background-color: #d0585b;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 4px solid #d0585b;
+        border-right: 4px solid #d0585b;
+    }
+
+    .tournament-table {
+        width: 100%;
+        margin: 0px auto;
+        border: 0px;
+        border-left: 2px solid #d0585b;
+    }
+
+    .tournament-table-head {
+        font-size: 24px;
+    }
+
+    .tournament-table-head th {
+        padding: 13px 0px;
+        background-color: #d0585b;
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+    }
+
+    .tournament-table-body tr{
+        font-size: 25px;
+    }
+
+    .position-column,
+    .matches-column,
+    .games-column,
+    .wins-column,
+    .draws-column,
+    .loses-column,
+    .team_points-column {
+        width: 9%;
+    }
+
+    .gdiff-column {
+        width: 12%;
+    }
+
+    .team-column {
+        padding: 10px 0px 10px 15px;
+    }
+
+    @media (min-height: 900px) {
+
+        .header {
+            font-size: 16px;
+            height: 15vh;
+        }
+    }
+}
+
+
+@media (max-width: 1200px) and (orientation: landscape) {
+
+    .best-players-title {
+        font-size: 52px;
+        margin-top: 40px;
+    }
+
+    .best-players {
+        width: 70%;
+        padding: 40px 0px;
+        grid-template-columns: 80%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "first"
+            "second"
+            "third";
+        justify-content: center;
+        grid-row-gap: 40px;
+    }
+
+    .first {
+        grid-area: first;
+        width: 100%;
+    }
+
+    .second {
+        grid-area: second;
+        width: 100%;
+        right: 0px;
+    }
+
+    .third {
+        grid-area: third;
+        width: 100%;
+        left: 0px;
+    }
+
+
+    .roster-scroll {
+        width: 65%;
+        margin-right: 4vw;
+    }
+
+    .gk:before {
+        font-size: 15px;
+        right: -12px;
+        top: 7px;
+    }
+
+    .number {
+        font-size: 14px;
+        width: 30px;
+        height: 30px;
+        right: -12px;
+        bottom: 4px;
+        padding: 4px;
+    }
+
+    .number span {
+        top: 3px;
+        right: 1px;
+    }
+
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        width: 8%;
+        font-size: 20px;
+    }
+
+    .name-column {
+        font-size: 18px;
+    }
+
+    .player-photo {
+        min-width: 65px;
+        min-height: 65px;
+    }
+
+    .name-column:before {
+        padding: 2px 8px 2px 8px;
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+
+    .player-info {
+        font-size: 17px;
+        padding: 5px 0px 15px 0px;
+    }
+
+
+    .tournament-table-scroll {
+        margin: 5vh auto;
+    }
+
+    .tournament-table-head {
+        font-size: 18px;
+    }
+
+    .tournament-table-head th {
+        padding: 8px 0px;
+    }
+
+    .tournament-table-body tr{
+        font-size: 20px;
+    }
+
+
+    .team-column {
+        padding: 7px 0px 7px 15px;
+    }
+
+}
+
+
+@media (max-width: 950px) and (orientation: landscape) {
+
+    html, body {
+        font-size: 9px;
+    }
+
+/* Header */
+    .header {
+        font-size: 9px;
+        height: 19vh;
+    }
+
+    .btn {
+        border: 2px solid #fff;
+    }
+
+    .btn:hover {
+        border: 2px solid #f00;
+    }
+
+    .btn[onclick='return false'] {
+        border: 2px solid #f00;
+    }
+
+/* Team best players */
+    .best-players-title {
+        font-size: 34px;
+        margin-top: 35px;
+    }
+
+    .best-players {
+        width: 75%;
+        padding: 35px 0px;
+        grid-row-gap: 30px;
+    }
+
+    .player-card {
+        grid-template-columns: 120px 45px 1fr 1fr;
+        grid-template-rows: 60px 60px 30px;
+    }
+
+    .photo {
+        max-width: 110px;
+    }
+
+    .name {
+        font-size: 28px;
+    }
+
+    .pos {
+        font-size: 22px;
+        top: 15px;
+        right: 18px;
+    }
+
+    .num {
+        font-size: 24px;
+        width: 45px;
+        height: 45px;
+        padding-top: 9px;
+        bottom: 10px;
+        right: 15px;
+    }
+
+    .plus-minus {
+        font-size: 100px;
+    }
+
+    .stats {
+        font-size: 24px;
+    }
+
+/* Roster */
+    .roster-scroll {
+        border-left: 2px solid #d96e50;
+        margin: 0 auto;
+        margin-right: 3vw;
+        max-height: 81vh;
+    }
+
+    .roster-scroll::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .roster-scroll::-webkit-scrollbar-thumb {
+        border: 2px solid #d96e50;
+    }
+
+    .roster-table-head {
+        font-size: 14px;
+    }
+
+    .roster-table-head th {
+        padding: 6px 0px;
+        position: sticky;
+    }
+
+    .roster-table-body tr{
+        font-size: 18px;
+    }
+
+    .photo-column {
+        padding: 2px;
+    }
+
+    .gk:before {
+        font-size: 12px;
+        right: -10px;
+        top: 4px;
+    }
+
+    .number {
+        font-size: 12px;
+        width: 22px;
+        height: 22px;
+        right: -8px;
+        bottom: 1px;
+        padding: 4px;
+    }
+
+    .number span {
+        top: 0.5px;
+        right: 0px;
+    }
+
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        width: 8%;
+        font-size: 15px;
+    }
+
+    .player-photo {
+        min-width: 45px;
+        min-height: 45px;
+    }
+
+    .name-column {
+        font-size: 15px;
+    }
+
+    .name-column:before {
+        padding: 0px 4px 1px 4px;
+        margin-right: 10px;
+        margin-left: 15px;
+        border: 1px solid #c3c3c3;
+    }
+
+    .player-info {
+        font-size: 14px;
+        padding: 4px 0px 10px 0px;
+    }
+
+/* Calendar */
+    .calendar-table-scroll {
+        width: 45%;
+        max-height: 75vh;
+        border: 0px;
+        border-top: 4px solid #0a0505;
+        border-bottom: 4px solid #0a0505;
+        margin: 3vh auto;
+        background: #0a0505;
+    }
+
+    .calendar-table-scroll::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .calendar-table-scroll::-webkit-scrollbar-thumb {
+        border: 2px solid #000;
+        border-left: 1px solid #000;
+    }
+
+    .calendar-table {
+        font-size: 12px;
+        border-left: 3px solid #0a0505;
+    }
+
+    .tour {
+        font-size: 12px;
+        padding: 3px 0px;
+    }
+
+    .date {
+        padding: 4px 0px;
+        font-size: 14px;
+    }
+
+    .match {
+        padding-bottom: 15px;
+        font-size: 14px;
+    }
+
+    .result {
+        padding: 0px 5px;
+    }
+
+/* Tournament table */
+
+    .tournament-table-scroll {
+        width: 55%;
+        max-height: 81vh;
+        border-bottom: 3px solid #d0585b;
+        overflow: hidden scroll;
+        margin: 0 auto;
+        background: #d0585b;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-track {
+        background-color: #d0585b;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 2px solid #d0585b;
+        border-right: 3px solid #d0585b;
+    }
+
+    .tournament-table {
+        width: 100%;
+        margin: 0px auto;
+        border: 0px;
+        border-left: 2px solid #d0585b;
+    }
+
+    .tournament-table-head {
+        font-size: 14px;
+    }
+
+    .tournament-table-head th {
+        padding: 6px 0px;
+        background-color: #d0585b;
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+    }
+
+    .tournament-table-body tr{
+        font-size: 15px;
+        padding: 3px 0px;
+    }
+
+    .position-column,
+    .matches-column,
+    .games-column,
+    .wins-column,
+    .draws-column,
+    .loses-column,
+    .team_points-column {
+        width: 9%;
+    }
+
+    .gdiff-column {
+        width: 12%;
+    }
+
+    .team-column {
+        padding: 3px 0px 3px 15px;
+    }
+
+
+    @media (min-height: 400px) {
+
+        .header {
+            font-size: 11px;
+        }
+
+    }
+
+}
+
+
+@media (max-width: 800px) and (orientation: landscape) {
+
+    html, body {
+        font-size: 8px;
+    }
+
+/* Header */
+    .header {
+        font-size: 9px;
+        height: 20vh;
+    }
+
+/* Index */
+    .team-photo {
+        width: 100%;
+    }
+
+/* Team best players */
+    .best-players-title {
+        font-size: 30px;
+        margin-top: 26px;
+    }
+
+    .best-players {
+        width: 75%;
+        padding: 30px 0px;
+        grid-row-gap: 30px;
+    }
+
+    .player-card {
+        grid-template-columns: 110px 40px 1fr 1fr;
+        grid-template-rows: 55px 55px 30px;
+    }
+
+    .photo {
+        max-width: 100px;
+    }
+
+    .name {
+        font-size: 22px;
+    }
+
+    .pos {
+        font-size: 20px;
+        top: 15px;
+        right: 18px;
+    }
+
+    .num {
+        font-size: 22px;
+        width: 40px;
+        height: 40px;
+        padding-top: 7px;
+        bottom: 10px;
+        right: 15px;
+    }
+
+    .plus-minus {
+        font-size: 90px;
+    }
+
+    .stats {
+        font-size: 23px;
+        padding-top: 10px;
+    }
+
+
+/* Roster */
+    .roster-scroll {
+        border-left: 3px solid #d96e50;
+        border-bottom: 3px solid #d96e50;
+        width: 100%;
+        height: 80vh;
+        margin: 0 auto;
+    }
+
+    .roster-scroll::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .roster-scroll::-webkit-scrollbar-thumb {
+        border: 2px solid #d96e50;
+    }
+
+    .roster-table-head {
+        font-size: 18px;
+    }
+
+    .roster-table-head th {
+        padding: 6px 0px;
+        position: sticky;
+    }
+
+    .roster-table-body tr{
+        font-size: 18px;
+    }
+
+    .photo-column {
+        padding: 2px;
+    }
+
+    .gk:before {
+        font-size: 14px;
+        right: 0px;
+        top: 7px;
+    }
+
+    .number {
+        font-size: 13px;
+        width: 26px;
+        height: 26px;
+        right: -2px;
+        bottom: 1px;
+        padding: 3px;
+    }
+
+    .number span {
+        top: 3px;
+        right: 0px;
+    }
+
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        width: 9%;
+        font-size: 18px;
+    }
+
+    .player-photo {
+        width: 80%;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    .name-column {
+        font-size: 18px;
+    }
+
+    .name-column:before {
+        padding: 0px 5px 3px 5px;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .player-info {
+        font-size: 15px;
+        padding: 5px 0px 12px 0px;
+    }
+
+/* Calendar */
+    .calendar-table-scroll {
+        width: 60%;
+        max-height: 80vh;
+        border: 0px;
+        border-top: 4px solid #0a0505;
+        border-bottom: 4px solid #0a0505;
+        margin: 0px auto;
+        background: #0a0505;
+    }
+
+    .calendar-table-scroll::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .calendar-table-scroll::-webkit-scrollbar-thumb {
+        border: 2px solid #000;
+    }
+
+    .calendar-table {
+        font-size: 12px;
+        border-left: 3px solid #0a0505;
+    }
+
+/* Tournament table */
+
+    .tournament-table-scroll {
+        width: 70%;
+        max-height: 80vh;
+        border-bottom: 3px solid #d0585b;
+        overflow: hidden scroll;
+        margin: 0 auto;
+        background: #d0585b;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-track {
+        background-color: #d0585b;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 2px solid #d0585b;
+        border-right: 3px solid #d0585b;
+    }
+
+    .tournament-table {
+        width: 100%;
+        margin: 0px auto;
+        border: 0px;
+        border-left: 2px solid #d0585b;
+    }
+
+    .tournament-table-head {
+        font-size: 14px;
+    }
+
+    .tournament-table-head th {
+        padding: 6px 0px;
+        background-color: #d0585b;
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+    }
+
+    .tournament-table-body tr{
+        font-size: 15px;
+        padding: 3px 0px;
+    }
+
+    .gdiff-column {
+        width: 12%;
+    }
+
+    .team-column {
+        padding: 3px 0px 3px 15px;
+    }
+
+
+    @media (min-height: 400px) {
+
+        .header {
+            font-size: 11px;
+        }
+
+    }
+
+}
+
+
+@media (max-width: 700px) and (orientation: landscape) {
+
+/* Team best players */
+    .best-players-title {
+        font-size: 30px;
+        margin-top: 20px;
+    }
+
+    .best-players {
+        width: 70%;
+        padding: 25px 0px;
+        grid-row-gap: 20px;
+    }
+
+    .player-card {
+        grid-template-columns: 90px 35px 1fr 1fr;
+        grid-template-rows: 45px 45px 28px;
+    }
+
+    .photo {
+        max-width: 80px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .plus-minus {
+        font-size: 70px;
+    }
+
+    .pos {
+        font-size: 18px;
+        top: 13px;
+        right: 14px;
+    }
+
+    .num {
+        font-size: 18px;
+        width: 34px;
+        height: 34px;
+        padding-top: 7px;
+        bottom: 5px;
+        right: 15px;
+    }
+
+    .gk:before {
+        font-size: 13px;
+        right: 0px;
+        top: 6px;
+    }
+
+    .number {
+        font-size: 13px;
+        width: 24px;
+        height: 24px;
+        right: 0px;
+        bottom: 1px;
+        padding: 4px;
+    }
+
+    .stats {
+        font-size: 17px;
+    }
+
+/* Roster */
+    .name-column:before {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .number span {
+        top: 1px;
+    }
+
+
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+
+/* Team best players */
+    .best-players-title {
+        font-size: 26px;
+        margin-top: 20px;
+    }
+
+    .best-players {
+        width: 80%;
+    }
+
+    .player-card {
+        grid-template-columns: 90px 30px 1fr 1fr;
+        grid-template-rows: 45px 45px 30px;
+    }
+
+    .photo {
+        max-width: 80px;
+    }
+
+    .name {
+        font-size: 19px;
+    }
+
+    .pos {
+        font-size: 16px;
+        top: 13px;
+        right: 14px;
+    }
+
+/* Roster */
+    .roster-table-head {
+        font-size: 17px;
+    }
+
+    .gk:before {
+        right: -6px;
+        top: 4px;
+    }
+
+    .number {
+        right: -4px;
+        bottom: 1px;
+    }
+
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        width: 8%;
+        font-size: 17px;
+    }
+
+    .name-column {
+        font-size: 17px;
+    }
+
+    .name-column:before {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .player-info {
+        font-size: 14px;
+        padding: 2px 0px 7px 0px;
+    }
+
+}
+
+
+@media (min-width: 651px) and (orientation: portrait) {
+
+/* Header */
+    .header {
+        height: 14vh;
+    }
+
+/* Team best players */
+    .best-players-title {
+        font-size: 38px;
+        margin-top: 30px;
+    }
+
+    .best-players {
+        padding: 30px 0px;
+        grid-template-columns: 90%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "first"
+            "second"
+            "third";
+        grid-row-gap: 30px;
+        justify-content: center;
+    }
+
+    .first {
+        grid-area: first;
+        width: 100%;
+    }
+
+    .second {
+        grid-area: second;
+        width: 100%;
+        right: 0px;
+    }
+
+    .third {
+        grid-area: third;
+        width: 100%;
+        left: 0px;
+    }
+
+    .player-card {
+        grid-template-columns: 130px 45px 1fr 1fr;
+        grid-template-rows: 65px 65px 40px;
+    }
+
+    .photo {
+        max-width: 120px;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+
+    .plus-minus {
+        font-size: 110px;
+    }
+
+    .num {
+        font-size: 26px;
+        width: 50px;
+        height: 50px;
+        padding-top: 10px;
+        bottom: 10px;
+        right: 18px;
+    }
+
+    .stats {
+        padding-top: 20px;
+        line-height: 1.6;
+        font-size: 26px;
+    }
+
+/* Roster */
+    .roster-scroll {
+        width: 100%;
+        max-height: 86vh;
+        margin: 0 auto;
+    }
+
+    .photo-column {
+        width: 13%;
+    }
+
+    .gk:before {
+        font-size: 18px;
+        right: -12px;
+        top: 12px;
+    }
+
+    .number {
+        font-size: 19px;
+        width: 40px;
+        height: 40px;
+        right: -10px;
+        bottom: 5px;
+        padding: 6px;
+    }
+
+    .number span {
+        top: 3px;
+        right: 0px;
+    }
+
+    .player-photo {
+        width: 100%;
+    }
+
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        width: 8%;
+    }
+
+    .name-column {
+        font-size: 20px;
+    }
+
+    .name-column:before {
+        padding: 1px 7px 3px 7px;
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+
+/* Calendar */
+    .calendar-table-scroll {
+        width: 70%;
+        max-height: 80vh;
+        margin: 3vh auto;
+    }
+
+    .tour {
+        font-size: 24px;
+        padding: 5px 0px;
+    }
+
+    .date {
+        font-size: 26px;
+        padding: 5px 0px;
+    }
+
+    .match {
+        padding-bottom: 30px;
+        font-size: 26px;
+    }
+
+/* Tournament table */
+    .tournament-table-scroll {
+        width: 85%;
+        max-height: 80vh;
+        margin: 3vh auto;
+        border: 4px solid #d0585b;
+        border-top: 0px;
+        border-right: 0px;
+        overflow: hidden scroll;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar {
+        width: 11px;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-track {
+        background-color: #d0585b;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 3px solid #d0585b;
+        border-right: 4px solid #d0585b;
+    }
+
+    .tournament-table {
+        width: 100%;
+        margin: 0px auto;
+        border: 0px;
+    }
+
+    .tournament-table-head {
+        font-size: 22px;
+    }
+
+    .tournament-table-head th {
+        padding: 10px 0px;
+        background-color: #d0585b;
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+    }
+
+    .tournament-table-body tr{
+        font-size: 24px;
+    }
+
+    .position-column,
+    .matches-column,
+    .games-column,
+    .wins-column,
+    .draws-column,
+    .loses-column,
+    .team_points-column {
+        width: 9%;
+    }
+
+    .gdiff-column {
+        width: 14%;
+    }
+
+    .team-column {
+        padding: 12px 0px 12px 15px;
+    }
+
+}
+
+
+@media (min-width: 900px) and (orientation: portrait) {
+
+/* Header */
+    .header {
+        height: 10vh;
+    }
+
+/* Team best players */
+    .best-players-title {
+        font-size: 50px;
+        margin-top: 40px;
+    }
+
+    .best-players {
+        padding: 40px 0px;
+        grid-template-columns: 75%;
+        grid-row-gap: 30px;
+        justify-content: center;
+    }
+
+    .player-card {
+        grid-template-columns: 140px 45px 1fr 1fr;
+        grid-template-rows: 70px 70px 40px;
+    }
+
+    .photo {
+        max-width: 130px;
+    }
+
+    .name {
+        font-size: 28px;
+    }
+
+    .plus-minus {
+        font-size: 115px;
+    }
+
+    .pos {
+        font-size: 28px;
+        top: 15px;
+        right: 18px;
+    }
+
+    .num {
+        font-size: 29px;
+        width: 55px;
+        height: 55px;
+        padding-top: 10px;
+        bottom: 10px;
+        right: 17px;
+    }
+
+    .stats {
+        padding-top: 25px;
+        font-size: 27px;
+        line-height: 1.7;
+    }
+
+/* Roster */
+    .roster-scroll {
+        width: 90%;
+        max-height: 84vh;
+        margin: 3vh auto;
+        border-left: 5px solid #d96e50;
+        border-bottom: 5px solid #d96e50;
+    }
+
+    .roster-scroll::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .roster-scroll::-webkit-scrollbar-track {
+        background-color: #d96e50;
+    }
+
+    .roster-scroll::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 3px solid #d96e50;
+    }
+
+    .roster-table-head th {
+        font-size: 25px;
+        padding: 20px 0px;
+    }
+
+    .roster-table-body tr{
+        font-size: 28px;
+    }
+
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        font-size: 26px;
+    }
+
+    .photo-column {
+        width: 12%;
+    }
+
+    .gk:before {
+        font-size: 21px;
+        right: -15px;
+        top: 12px;
+    }
+
+    .number {
+        font-size: 22px;
+        width: 40px;
+        height: 40px;
+        right: -15px;
+        bottom: 5px;
+        padding: 6px;
+    }
+
+    .number span {
+        top: 1px;
+        right: 0px;
+    }
+
+    .name-column {
+        font-size: 26px;
+    }
+
+    .name-column:before {
+        padding: 0px 9px 3px 9px;
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+
+    .player-info {
+        font-size: 24px;
+        padding: 4px 0px 20px 0px;
+    }
+
+/* Calendar */
+    .calendar-table-scroll {
+        width: 60%;
+        max-height: 84vh;
+        margin: 3vh auto;
+    }
+
+    .tour {
+        font-size: 26px;
+        padding: 5px 0px;
+    }
+
+    .date {
+        font-size: 28px;
+        padding: 5px 0px;
+    }
+
+    .match {
+        padding-bottom: 30px;
+        font-size: 28px;
+    }
+
+/* Tournament table */
+    .tournament-table-scroll {
+        width: 80%;
+        max-height: 84vh;
+        margin: 3vh auto;
+        border: 5px solid #d0585b;
+        border-top: 0px;
+        border-right: 0px;
+        overflow: hidden scroll;
+        background-color: #d0585b;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-track {
+        background-color: #d0585b;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 3px solid #d0585b;
+        border-right: 4px solid #d0585b;
+    }
+
+    .tournament-table-head {
+        font-size: 26px;
+    }
+
+    .tournament-table-head th {
+        padding: 16px 0px;
+    }
+
+    .tournament-table-body tr{
+        font-size: 28px;
+    }
+
+    .position-column,
+    .matches-column,
+    .games-column,
+    .wins-column,
+    .draws-column,
+    .loses-column,
+    .team_points-column {
+        width: 9%;
+    }
+
+    .gdiff-column {
+        width: 14%;
+    }
+
+    .team-column {
+        padding: 15px 0px 15px 25px;
+    }
+
+}
+
+
+@media (max-width: 650px) and (orientation: portrait) {
+
+    html, body {
+        font-size: 8px;
+    }
+
+/* Header */
+    .header {
+        flex-direction: column;
+        font-size: 9px;
+        height: 17vh;
+        padding: 0;
+    }
+
+    .title-btn {
+        padding: 0px 0px;
+        padding-top: 5px;
+        font-size: 14px;
+    }
+
+    .title-btn:after {
+        content: none;
+    }
+
+    .nav {
+        padding-bottom: 5px;
+    }
+
+    .btn[onclick='return false'] {
+        top: -7px;
+    }
+
+/* Index */
+    .team-photo {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+/* Team best players */
+    .best-players-title {
+        font-size: 30px;
+        margin-top: 25px;
+    }
+
+    .best-players {
+        padding: 25px 0px;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "first"
+            "second"
+            "third";
+        grid-row-gap: 25px;
+        justify-content: center;
+    }
+
+    .first {
+        grid-area: first;
+        width: 100%;
+    }
+
+    .second {
+        grid-area: second;
+        width: 100%;
+        right: 0px;
+    }
+
+    .third {
+        grid-area: third;
+        width: 100%;
+        left: 0px;
+    }
+
+    .player-card {
+        grid-template-columns: 110px 45px 1fr 1fr;
+        grid-template-rows: 55px 55px 30px;
+    }
+
+    .photo {
+        max-width: 100px;
+    }
+
+    .name {
+        font-size: 22px;
+    }
+
+    .plus-minus {
+        font-size: 90px;
+    }
+
+    .stats {
+        font-size: 21px;
+    }
+
+    .pos {
+        font-size: 22px;
+        top: 13px;
+        right: 15px;
+    }
+
+    .num {
+        font-size: 22px;
+        width: 43px;
+        height: 43px;
+        padding-top: 9px;
+        bottom: 9px;
+        right: 17px;
+    }
+
+
+/* Roster */
+    .roster-scroll {
+        width: 100%;
+        max-height: 83vh;
+        margin: 0 auto;
+    }
+
+    .roster-scroll::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .roster-scroll::-webkit-scrollbar-thumb {
+        border: 2px solid #d96e50;
+    }
+
+    .roster-table-head {
+        font-size: 15px;
+    }
+
+    .roster-table-head th {
+        padding: 6px 0px;
+    }
+
+    .roster-table-body tr{
+        font-size: 18px;
+    }
+
+    .photo-column {
+        padding: 2px;
+    }
+
+    .gk:before {
+        font-size: 13px;
+        right: -7px;
+        top: 4px;
+    }
+
+    .number {
+        font-size: 14px;
+        width: 26px;
+        height: 26px;
+        right: -8px;
+        bottom: 1px;
+        padding: 4px;
+    }
+
+    .number span {
+        top: 1px;
+        right: 0px;
+    }
+
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        width: 7%;
+        font-size: 18px;
+    }
+
+    .player-photo {
+        min-width: 45px;
+        min-height: 45px;
+    }
+
+    .name-column {
+        font-size: 18px;
+    }
+
+    .name-column:before {
+        padding: 0px 5px 2px 5px;
+        margin-right: 15px;
+        margin-left: 15px;
+        border: 1px solid #c3c3c3;
+    }
+
+    .player-info {
+        font-size: 16px;
+        padding: 4px 0px 13px 0px;
+    }
+
+/* Calendar */
+    .calendar-table-scroll {
+        width: 70%;
+        max-height: 76vh;
+        border: 0px;
+        border-top: 4px solid #0a0505;
+        border-bottom: 4px solid #0a0505;
+        border-left: 4px solid #0a0505;
+        margin: 2vh auto 5vh;
+        background: #0a0505;
+    }
+
+    .calendar-table-scroll::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .calendar-table-scroll::-webkit-scrollbar-thumb {
+        border: 2px solid #000;
+    }
+
+/* Tournament table */
+
+    .tournament-table-scroll {
+        width: 100%;
+        max-height: 83vh;
+        border: 3px solid #d0585b;
+        border-top: 0px;
+        border-right: 0px;
+        overflow: hidden scroll;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-track {
+        background-color: #d0585b;
+    }
+
+    .tournament-table-scroll::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 2px solid #d0585b;
+        border-right: 3px solid #d0585b;
+    }
+
+    .tournament-table {
+        width: 100%;
+        margin: 0px auto;
+        border: 0px;
+    }
+
+    .tournament-table-head {
+        font-size: 15px;
+    }
+
+    .tournament-table-head th {
+        padding: 6px 0px;
+        background-color: #d0585b;
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+    }
+
+    .tournament-table-body tr{
+        font-size: 16px;
+    }
+
+    .position-column,
+    .matches-column,
+    .games-column,
+    .wins-column,
+    .draws-column,
+    .loses-column,
+    .team_points-column {
+        width: 9%;
+    }
+
+    .gdiff-column {
+        width: 14%;
+    }
+
+    .team-column {
+        padding: 8px 0px 8px 15px;
+    }
+
+    @media (min-height: 800px) {
+
+    /* Header */
+        .header {
+            height: 14vh;
+        }
+
+    /* Roster */
+        .roster-scroll {
+            max-height: 86vh;
+        }
+
+        .calendar-table-scroll {
+            max-height: 79vh;
+        }
+
+        .tournament-table-scroll {
+            max-height: 86vh;
+        }
+    }
+
+}
+
+@media (max-width: 550px) and (orientation: portrait) {
+
+/* Team best players */
+    .best-players-title {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    .best-players {
+        padding: 20px 0px;
+        grid-row-gap: 20px;
+    }
+
+    .player-card {
+        grid-template-columns: 90px 40px 1fr 1fr;
+        grid-template-rows: 45px 45px 30px;
+    }
+
+    .photo {
+        max-width: 80px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .plus-minus {
+        font-size: 70px;
+    }
+
+    .stats {
+        font-size: 18px;
+    }
+
+    .pos {
+        font-size: 18px;
+        top: 12px;
+        right: 13px;
+    }
+
+    .num {
+        font-size: 22px;
+        width: 38px;
+        height: 38px;
+        padding-top: 7px;
+        bottom: 5px;
+        right: 18px;
+    }
+
+/* Roster */
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        font-size: 17px;
+    }
+
+    .name-column {
+        font-size: 17px;
+    }
+
+    .name-column:before {
+        padding: 0px 5px 1px 5px;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+/* Calendar */
+    .calendar-table-scroll {
+        width: 80%;
+        border-left: 3px solid #0a0505;
+    }
+
+    .tour {
+        font-size: 16px;
+        padding: 3px 0px;
+    }
+
+    .date {
+        font-size: 16px;
+        padding: 5px 0px;
+    }
+
+    .match {
+        padding-bottom: 18px;
+        font-size: 16px;
+    }
+
+    .result {
+        padding: 0px 7px;
+    }
+
+}
+
+
+@media (max-width: 450px) and (orientation: portrait) {
+/* Header */
+    .btn {
+        border: 2px solid #fff;
+    }
+
+    .btn:hover {
+        border: 2px solid #f00;
+    }
+
+    .btn[onclick='return false'] {
+        border: 2px solid #f00;
+    }
+
+/* Team best players */
+    .best-players-title {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .best-players {
+        padding: 20px 0px;
+        grid-row-gap: 20px;
+    }
+
+    .player-card {
+        grid-template-columns: 70px 35px 2fr 3fr;
+        grid-template-rows: 35px 35px 30px;
+    }
+
+    .photo {
+        max-width: 65px;
+    }
+
+    .name {
+        font-size: 18px;
+        grid-area: 3/1/4/5;
+    }
+
+    .plus-minus {
+        font-size: 55px;
+        grid-area: 1/4/3/5;
+        padding-top: 25px;
+    }
+
+    .pos {
+        font-size: 16px;
+        top: 10px;
+        right: 7px;
+    }
+
+    .num {
+        font-size: 16px;
+        width: 30px;
+        height: 30px;
+        padding-top: 6px;
+        bottom: 0px;
+        right: 14px;
+    }
+
+    .stats {
+        padding-left: 5px;
+        padding-top: 8px;
+        font-size: 14px;
+    }
+
+/* Roster */
+    .gk:before {
+        font-size: 12px;
+        right: -12px;
+        top: 4px;
+    }
+
+    .number {
+        font-size: 11px;
+        width: 20px;
+        height: 20px;
+        right: -7px;
+        bottom: 3px;
+        padding: 4px;
+    }
+
+    .number span {
+        top: 0px;
+    }
+
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        width: 8%;
+        font-size: 13px;
+    }
+
+    .name-column {
+        font-size: 13px;
+    }
+
+    .name-column:before {
+        padding: 0px 4px 2px 4px;
+        margin-right: 5px;
+        margin-left: 10px;
+    }
+
+    .player-info {
+        font-size: 12px;
+        padding: 4px 0px 10px 0px;
+    }
+
+}
+
+
+@media (max-width: 350px) and (orientation: portrait) {
+
+/* Header */
+    .header {
+        flex-direction: column;
+        font-size: 9px;
+        height: 17vh;
+        padding: 0;
+    }
+
+    .title-btn {
+        padding: 0px 0px;
+        padding-top: 4px;
+        font-size: 12px;
+    }
+
+    .title-btn:after {
+        content: none;
+    }
+
+    .nav {
+        padding-bottom: 4px;
+    }
+
+    .btn[onclick='return false'] {
+        top: -5px;
+    }
+
+/* Team best players */
+    .best-players-title {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .best-players {
+        width: 85%;
+    }
+
+    .name {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .player-card {
+        grid-template-rows: 35px 35px 25px;
+    }
+
+    .photo {
+        max-width: 60px;
+    }
+
+    .pos {
+        font-size: 14px;
+        top: 10px;
+        right: 12px;
+    }
+
+    .num {
+        font-size: 16px;
+        width: 28px;
+        height: 28px;
+        padding-top: 5px;
+        bottom: 2px;
+        right: 15px;
+    }
+
+/* Roster */
+    .roster-table-head {
+        font-size: 11px;
+    }
+
+    .roster-table-head th {
+        padding: 7px 0px;
+    }
+
+    .roster-table-body tr{
+        font-size: 11px;
+    }
+
+    .player-photo {
+        min-width: 37px;
+        min-height: 37px;
+    }
+
+    .gk:before {
+        font-size: 9px;
+        right: -7px;
+        top: 3px;
+    }
+
+    .number {
+        font-size: 10px;
+        width: 18px;
+        height: 18px;
+        right: -7px;
+        bottom: 2px;
+        padding: 0px;
+    }
+
+    .number span {
+        top: 3px;
+        right: 0px;
+    }
+
+    .matches-column,
+    .goals-column,
+    .passes-column,
+    .points-column,
+    .pm-column {
+        width: 8.5%;
+        font-size: 11px;
+    }
+
+    .name-column {
+        font-size: 11px;
+    }
+
+    .name-column:before {
+        padding: 0px 3px 1px 3px;
+        margin-right: 2px;
+        margin-left: 7px;
+    }
+
+    .player-info {
+        font-size: 11px;
+    }
+
+/* Calendar */
+    .calendar-table-scroll {
+        width: 85%;
+    }
+
+/* Tournament table */
+    .tournament-table-head {
+        font-size: 13px;
+    }
+
+    .tournament-table-head th {
+        padding: 8px 0px;
+    }
+
+    .tournament-table-body tr{
+        font-size: 15px;
+    }
+
+    .gdiff-column {
+        width: 16%;
+    }
+
+    .team-column {
+        padding: 8px 0px 8px 8px;
+    }
+
+}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block container_class %}
+    table
+{% endblock %}
+
+{% block table-current %}
+    onclick="return false"
+{% endblock %}
+
+{% block main %}
+    <div class="tournament-table-scroll">
+        <table class="tournament-table">
+            <thead class="tournament-table-head">
+                <tr>
+                    <th colspan="2">Команда</th>
+                    <th class="games-column">И</th>
+                    <th class="wins-column">В</th>
+                    <th class="draws-column">Н</th>
+                    <th class="loses-column">П</th>
+                    <th class="gdiff-column">РМ</th>
+                    <th class="team_points-column">О</th>
+                </tr>
+            </thead>
+            <tbody class="tournament-table-body">
+
+                {% for team in teams %}
+                    <tr class="{{ team.status }}">
+                        <td class="position-column">{{ team.position }}</td>
+                        <td class="team-column">{{ team.name }}</td>
+                        <td class="games-column">{{ team.games }}</td>
+                        <td class="wins-column">{{ team.wins }}</td>
+                        <td class="draws-column">{{ team.draws }}</td>
+                        <td class="loses-column">{{ team.loses }}</td>
+                        <td class="gdiff-column">{{ team.goals_scored }}-{{ team.goals_allowed }}</td>
+                        <td class="team_points-column">{{ team.points }}</td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table> <!-- Tournament table end -->
+    </div>
+
+{% endblock %}

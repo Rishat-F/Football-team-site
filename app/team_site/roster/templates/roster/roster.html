@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block container_class %}
+    roster
+{% endblock %}
+
+{% block roster-current %}
+    onclick="return false"
+{% endblock %}
+
+{% block main %}
+    <div class="roster-scroll">
+        <table class="roster-table" cellspacing=0 cellpadding=0>
+            <thead class="roster-table-head">
+                <tr>
+                    <th colspan="2">Игрок</th>
+                    <th class="matches-column">И</th>
+                    <th class="goals-column">Г</th>
+                    <th class="passes-column">ГП</th>
+                    <th class="points-column">О</th>
+                    <th class="pm-column">+/-</th>
+                </tr>
+            </thead>
+            <tbody class="roster-table-body">
+
+
+                {% for player in players %}
+                    <tr class="player">
+                        <td class="photo-column {{ player.position }}">
+                            <img class="player-photo" src="{{ player.photo.url }}" alt="Фото игрока">
+                            <span class="number"><span>{{ player.number }}</span></span>
+                        </td>
+                        <td class="name-column">{{ player.name }}</td>
+                        <td class="matches-column">{{ player.games }}</td>
+                        <td class="goals-column">{{ player.goals }}</td>
+                        <td class="passes-column">{{ player.passes }}</td>
+                        <td class="points-column">{{ player.points }}</td>
+                        <td class="pm-column">{{ player.pm }}</td>
+                    </tr>
+                    <tr class="player-info-row">
+                        <td colspan="7">
+                            <div class="player-info">
+                                <div>Возраст: {{ player.age }}</div>
+                                <div>Рост: {{ player.height }}</div>
+                                <div>Вес: {{ player.weight }}</div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+
+            </tbody>
+        </table> <!-- Roster table end -->
+    </div>
+{% endblock %}
