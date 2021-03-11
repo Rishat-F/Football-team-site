@@ -1,7 +1,3 @@
-/* Mini-game in index-page */
-const ball = document.querySelector("#ball");
-
-
 /* Dropping additional information about player in roster-page */
 
 const players = document.querySelectorAll(".player");
